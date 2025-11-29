@@ -1,0 +1,17 @@
+{
+  "communications": {
+    "Cmax": 3.46
+  },
+  "thermodynamics_carnot": {
+    "Cmax": 0.79
+  },
+  "ml_imagenet": {
+    "Cmax": 0.905
+  },
+  "finance_roa": {
+    "Cmax": 0.02
+  },
+  "governance_tpr_at_fpr005": {
+    "Cmax": 0.95
+  }
+}
