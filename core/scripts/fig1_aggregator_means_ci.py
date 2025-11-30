@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 # scripts/fig1_aggregator_means_ci.py
 import matplotlib.pyplot as plt
 import numpy as np
@@ -17,12 +18,17 @@ ax.axhline(phi, color="red", linestyle="--", linewidth=2,
 ax.set_xticks(x)
 ax.set_xticklabels(["Multiplicative", "Fibonacci-\nlike", "Cobb–\nDouglas", "LSE"], fontsize=11)
 ax.set_ylim(1.618020, 1.618050)
-ax.set_ylabel("Estimated Fixed Point")
-ax.set_title("Fixed-Point Estimates Across Aggregators\n(Median ± 95% Bootstrap CI)")
+ax.set_ylabel("Estimated Fixed Point", fontsize=12)
+ax.set_title("Fixed-Point Estimates Across Aggregators\n(Median ± 95% Bootstrap CI)", fontsize=13)
+
+# CRITICAL FIX: Disable offset notation
+ax.ticklabel_format(style='plain', axis='y', useOffset=False)
+
 ax.grid(True, axis='y', linestyle=':', alpha=0.6)
 ax.legend(fontsize=11)
 plt.tight_layout(pad=2.0)
 plt.subplots_adjust(bottom=0.20)
-plt.savefig("../figures/fig1_aggregator_means_ci.png", dpi=500, bbox_inches='tight')
-plt.savefig("../figures/fig1_aggregator_means_ci.pdf", bbox_inches='tight')
+plt.savefig("fig1_aggregator_means_ci.png", dpi=500, bbox_inches='tight')
+plt.savefig("fig1_aggregator_means_ci.pdf", bbox_inches='tight')
 plt.close()
+print("✓ Fixed-point estimates figure saved (offset disabled)")
