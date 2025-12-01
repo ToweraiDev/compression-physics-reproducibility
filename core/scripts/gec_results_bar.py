@@ -1,5 +1,11 @@
 # scripts/gec_results_bar.py
+from pathlib import Path
+
 import matplotlib.pyplot as plt
+
+
+FIGURES_DIR = Path(__file__).resolve().parent.parent / "figures"
+FIGURES_DIR.mkdir(parents=True, exist_ok=True)
 
 domains = ["Comms", "Thermo", "ML", "Finance", "Governance"]
 gec0 = [0.87, 0.81, 0.95, 0.44, 0.88]
@@ -16,5 +22,5 @@ plt.ylabel('GEC₀')
 plt.title('GEC₀ Across Domains (Real 2024 Data)')
 plt.legend()
 plt.tight_layout()
-plt.savefig("../figures/gec_results_real.png", dpi=300, bbox_inches='tight')
+plt.savefig(FIGURES_DIR / "gec_results_real.png", dpi=300, bbox_inches='tight')
 plt.close()

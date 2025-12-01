@@ -1,6 +1,12 @@
 # scripts/metallic_convergence.py
-import numpy as np
+from pathlib import Path
+
 import matplotlib.pyplot as plt
+import numpy as np
+
+
+FIGURES_DIR = Path(__file__).resolve().parent.parent / "figures"
+FIGURES_DIR.mkdir(parents=True, exist_ok=True)
 
 def metallic_recurrence(t0, k, steps=15):
     t = [t0]
@@ -23,5 +29,5 @@ plt.title("Convergence to Metallic Means")
 plt.legend()
 plt.grid(True, alpha=0.3)
 plt.tight_layout()
-plt.savefig("../figures/metallic_convergence.png", dpi=300, bbox_inches='tight')
+plt.savefig(FIGURES_DIR / "metallic_convergence.png", dpi=300, bbox_inches='tight')
 plt.close()

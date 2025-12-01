@@ -13,9 +13,14 @@ Outputs:
 """
 
 import math
-import numpy as np
-import matplotlib.pyplot as plt
 from pathlib import Path
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+# ------------------ Shared simulation config ------------------
+FIGURES_DIR = Path(__file__).resolve().parent.parent / "figures"
+FIGURES_DIR.mkdir(parents=True, exist_ok=True)
 
 # ------------------ Shared simulation config ------------------
 phi = (1 + 5**0.5) / 2
@@ -153,7 +158,7 @@ plt.ylabel("fixed-point estimate $\\hat t$")
 plt.title("Aggregator estimates: median ± 95% CI")
 plt.legend()
 plt.tight_layout()
-plt.savefig("fig1_aggregator_means_ci.pdf")
+plt.savefig(FIGURES_DIR / "fig1_aggregator_means_ci.pdf")
 plt.close()
 
 # ------------------ Plot: Fig 2 ------------------
@@ -167,7 +172,7 @@ plt.ylabel("Median MSE vs $\\varphi$")
 plt.title("Median MSE to $\\varphi$ by estimator and model (lower is better)")
 plt.legend()
 plt.tight_layout()
-plt.savefig("fig2_mse_vs_phi.pdf")
+plt.savefig(FIGURES_DIR / "fig2_mse_vs_phi.pdf")
 plt.close()
 
 print("Wrote: fig1_aggregator_means_ci.pdf, fig2_mse_vs_phi.pdf")

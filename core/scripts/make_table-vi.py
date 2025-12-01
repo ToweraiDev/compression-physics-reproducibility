@@ -17,8 +17,9 @@ For each domain:
 """
 
 import math
-import numpy as np
 from pathlib import Path
+
+import numpy as np
 
 # --- Fixed-point + golden ratio ---
 phi = (1 + 5**0.5) / 2
@@ -74,6 +75,9 @@ n = 80         # draws per replicate
 seed = 42
 rng = np.random.default_rng(seed)
 
+FIGURES_DIR = Path(__file__).resolve().parent.parent / "figures"
+FIGURES_DIR.mkdir(parents=True, exist_ok=True)
+
 def evaluate_domain(sigma):
     """Return dict of median |t_hat - phi| per estimator."""
     dist = {name: [] for name in ESTIMATORS}
@@ -121,7 +125,7 @@ def main():
     )
 
     tex = header + "\n".join(rows) + footer
-    Path("tab_robust_grid.tex").write_text(tex, encoding="utf-8")
+    (FIGURES_DIR / "tab_robust_grid.tex").write_text(tex, encoding="utf-8")
 
     # Also print a compact version to the console
     print(tex)
