@@ -1,7 +1,13 @@
 #!/usr/bin/env python3
 # scripts/fig1_aggregator_means_ci.py
+from pathlib import Path
+
 import matplotlib.pyplot as plt
 import numpy as np
+
+
+FIGURES_DIR = Path(__file__).resolve().parent.parent / "figures"
+FIGURES_DIR.mkdir(parents=True, exist_ok=True)
 
 aggregators = ["Multiplicative", "Fibonacci-like", "Cobb–Douglas", "LSE"]
 medians = [1.6180341, 1.6180347, 1.6180342, 1.6180340]
@@ -28,7 +34,7 @@ ax.grid(True, axis='y', linestyle=':', alpha=0.6)
 ax.legend(fontsize=11)
 plt.tight_layout(pad=2.0)
 plt.subplots_adjust(bottom=0.20)
-plt.savefig("fig1_aggregator_means_ci.png", dpi=500, bbox_inches='tight')
-plt.savefig("fig1_aggregator_means_ci.pdf", bbox_inches='tight')
+plt.savefig(FIGURES_DIR / "fig1_aggregator_means_ci.png", dpi=500, bbox_inches='tight')
+plt.savefig(FIGURES_DIR / "fig1_aggregator_means_ci.pdf", bbox_inches='tight')
 plt.close()
 print("✓ Fixed-point estimates figure saved (offset disabled)")

@@ -1,6 +1,12 @@
 # scripts/convergence_rate.py
-import numpy as np
+from pathlib import Path
+
 import matplotlib.pyplot as plt
+import numpy as np
+
+
+FIGURES_DIR = Path(__file__).resolve().parent.parent / "figures"
+FIGURES_DIR.mkdir(parents=True, exist_ok=True)
 
 phi = (1 + np.sqrt(5)) / 2
 t = np.array([1.0])
@@ -17,5 +23,5 @@ plt.ylabel("Error |t_n - φ|")
 plt.title("Convergence Rate to φ (k=1)")
 plt.grid(True, which="both", ls=":", alpha=0.6)
 plt.tight_layout()
-plt.savefig("../figures/convergence_rate.png", dpi=300, bbox_inches='tight')
+plt.savefig(FIGURES_DIR / "convergence_rate.png", dpi=300, bbox_inches='tight')
 plt.close()
