@@ -5,7 +5,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 SCRIPTS_DIR = ROOT / "core" / "scripts"
-PHI_DEMO_DIR = ROOT / "phi demo"
+PHI_DEMO_DIR = ROOT / "phi_demo"
 FIGURES_DIR = ROOT / "core" / "figures"
 FIGURES_DIR.mkdir(parents=True, exist_ok=True)
 
