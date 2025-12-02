@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it using the metadata below."
+title: "Compression Physics: A Domain-Normalized Efficiency Index (Generalized Efficiency Coefficient, GEC)"
+version: "2.0.0"
+doi: "10.5281/zenodo.17785197"
+date-released: "2025-12-01"
+
+authors:
+  - family-names: Brooks
+    given-names: Mycal
+    orcid: "0009-0006-7513-8532"  
+
+repository-code: "https://github.com/ToweraiDev/compression-physics-reproducibility"
+abstract: >
+  This work introduces the Generalized Efficiency Coefficient (GEC), a domain-normalized 
+  measure of system efficiency that unifies metrics across physics, engineering, and 
+  information systems. It defines a universal framework—“Compression Physics”—for 
+  evaluating how closely a process approaches its theoretical or empirical efficiency bound.
+license: "CC-BY-4.0"
+
+keywords:
+  - Generalized Efficiency Coefficient
+  - Compression Physics
+  - Efficiency
+  - Benchmarking
+  - Metallic Means
+  - Optimization
+  - Systems Theory
+  - Information Theory
