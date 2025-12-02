@@ -33,45 +33,41 @@ This repository includes **all code, scripts, and datasets required to regenerat
 
 ```
 
-compression-physics-reproducibility/
-│
-├── core/
-│   ├── scripts/                # Reproducibility scripts
-│   │   ├── aggregator_fixed_point.py
-│   │   ├── bootstrap_metallic.py
-│   │   ├── metallic_model.py
-│   │   ├── null_models.py
-│   │   ├── phi_frontier_tools.py
-│   │   └── ...
-│   │
-│   ├── plotting/               # Figure generation
-│   │   ├── fig_fixed_point.py
-│   │   ├── fig_bootstrap.py
-│   │   └── ...
-│   │
-│   └── data/                   # Demo datasets
-│       ├── demo_symmetric.csv
-│       ├── demo_asymmetric.csv
-│       └── demo_null.csv
-│
-├── phi_demo/                   # Standalone demonstration harnesses
-│   ├── phi_proof_harness.py
-│   ├── phi_aggregator_runner.py
-│   └── demo_*.csv
-│
-├── validator/                  # Real-data validator templates
-│   ├── gec_metallic_validator.py
-│   ├── gec_example_rows.csv
-│   └── real_data_template.csv
-│
-├── notebooks/                  # Jupyter notebooks for exploration
-│   ├── GEC_Primer.ipynb
-│   └── Compression_Physics_v2.ipynb
-│
-├── figures/                    # Auto-generated figure outputs
-│
-├── requirements.txt
-└── README.md
+## Repository Structure
+
+This repository is organized into the following top-level components:
+
+### **core/**
+Core reproducibility logic, including:
+- **scripts/** – All model-fitting, estimator, and bootstrap scripts  
+- **plotting/** – Figure generation scripts  
+- **data/** – Demo datasets used in the paper  
+
+### **phi_demo/**
+Standalone demonstration harnesses for:
+- Metallic model fits  
+- Aggregator-based fixed-point estimation  
+- Synthetic symmetric / asymmetric / null datasets  
+
+### **validator/**
+Templates and tools for validating GEC on real-world datasets:
+- Example row formats  
+- Metallic-mean validator script  
+- Real-data CSV template  
+
+### **notebooks/**
+Jupyter notebooks for exploration, tutorials, and walkthroughs:
+- *GEC_Primer.ipynb*  
+- *Compression_Physics_v2.ipynb*  
+
+### **figures/**
+Auto-generated figures used in the manuscript (created by scripts in `plotting/`).
+
+### **requirements.txt**
+Python dependencies for full reproducibility.
+
+### **README.md**
+Project overview, installation instructions, and reproducibility details.
 
 ````
 
@@ -267,11 +263,10 @@ You are free to use, modify, and distribute with attribution.
 # Contact
 
 For questions, implementations, or collaborations:
-**Mycal Brooks**
-mycalbrooks@projecttower.org
----
 
-```
 
 ---
+   **Mycal Brooks** 
+   mycalbrooks@projecttower.org
+
 
